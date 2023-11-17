@@ -1,7 +1,8 @@
+#include <stdio.h>
+#include <string.h>
+
 #include "hexporter.h"
 
-extern void printHex(char);
-extern int argError();
 
 int main(int argc, char* argv[])
 {
@@ -16,9 +17,9 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-inline void printHex(char input)
+void printHex(char input)
 {
-    if (input == ' ' || input == '\n')
+    if (input == ' ')
     {
         printf("\b%c", input);
     }
@@ -28,9 +29,9 @@ inline void printHex(char input)
     }
 }
 
-inline int argError()
+int argError()
 {
     printf("Incorrect number of arguments or empty string passed\n");
-    printf("Usage: ./hexport [string]\n");
+    printf("Usage: ./hexporter [string]\n");
     return -1;
 }
